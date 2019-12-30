@@ -1,0 +1,20 @@
+<div class="col-md-4" *ngFor="let task of tasks">
+
+  <div class="card text-center">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      {{task.title}}
+      <button class="btn btn-danger" (click)="deleteTask(task.id)">
+          <i class="fas fa-trash"></i>
+      </button>
+    </div>
+    <img [src]="task.image" class="card-img-top">
+    <div class="card-body">
+      <p>
+        {{task.description}}
+      </p>
+      <a [routerLink]="['/tasks/edit', task.id]" class="btn btn-info btn-block">
+        EDIT TASK
+      </a>
+    </div>
+  </div>
+</div>
